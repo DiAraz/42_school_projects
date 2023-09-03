@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 12:25:08 by daraz             #+#    #+#             */
-/*   Updated: 2023/08/16 13:38:29 by daraz            ###   ########.fr       */
+/*   Updated: 2023/08/28 11:17:40 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 	DESCRIPTION :
 	The function ft_strnstr searches the first n bytes of the given string
-	s1 for the first occurence of the full string s2.
+	s1 for the first occurrence of the full string s2.
 	Characters that appear after \0 are not searched.
 
 	RETURN VALUE :

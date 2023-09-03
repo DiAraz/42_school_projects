@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 10:21:14 by daraz             #+#    #+#             */
-/*   Updated: 2023/08/28 08:22:33 by daraz            ###   ########.fr       */
+/*   Created: 2023/08/28 12:21:35 by daraz             #+#    #+#             */
+/*   Updated: 2023/08/28 12:54:27 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,22 @@
 
 /*
 	DESCRIPTION :
-	The function ft_strchr finds the first occurrence of character c in
-	string str.
+	The function ft_strdup duplicates the given string s1 by allocating 
+	memory and performing a copy of the given string.
 
 	RETURN VALUE :
-	A pointer to the first occurrence of c in str.
-	NULL if c is not found.
+	A pointer to the new string. NULL if the memory allocation fails.
 */
 
-char	*ft_strchr(const char *str, int c)
+char	*ft_strdup(const char *s1)
 {
-	int				i;
-	unsigned char	ch;
+	char	*s2;
+	size_t	len;
 
-	i = 0;
-	ch = c;
-	if (ch == '\0')
-	{
-		i = ft_strlen(str);
-		return ((char *)str + i++);
-	}
-	while (str[i])
-	{
-		if (str[i] == ch)
-			return ((char *)str + i);
-		i++;
-	}
-	return (NULL);
+	len = ft_strlen(s1) + 1;
+	s2 = malloc(len * sizeof(char));
+	if (!s2)
+		return (NULL);
+	ft_strlcpy(s2, s1, len);
+	return (s2);
 }

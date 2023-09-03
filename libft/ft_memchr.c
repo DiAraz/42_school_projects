@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 12:05:11 by daraz             #+#    #+#             */
-/*   Updated: 2023/08/16 12:22:20 by daraz            ###   ########.fr       */
+/*   Updated: 2023/08/28 06:59:02 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 	DESCRIPTION :
 	The function ft_memchr searches n bytes of the memory area pointed to
-	by s for the first occurence of c. Both c and the bytes of s are
+	by s for the first occurrence of c. Both c and the bytes of s are
 	interpreted as unsigned char.
 
 	RETURN VALUE:

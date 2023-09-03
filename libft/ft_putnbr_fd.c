@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 10:21:14 by daraz             #+#    #+#             */
-/*   Updated: 2023/08/28 08:22:33 by daraz            ###   ########.fr       */
+/*   Created: 2023/08/30 12:19:29 by daraz             #+#    #+#             */
+/*   Updated: 2023/08/30 13:05:01 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,28 @@
 
 /*
 	DESCRIPTION :
-	The function ft_strchr finds the first occurrence of character c in
-	string str.
+	The function ft_putnbr_fd writes the given integer n on the given
+	file descriptor by converting it into char.
 
 	RETURN VALUE :
-	A pointer to the first occurrence of c in str.
-	NULL if c is not found.
+	None.
 */
 
-char	*ft_strchr(const char *str, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int				i;
-	unsigned char	ch;
+	long	nbr;
 
-	i = 0;
-	ch = c;
-	if (ch == '\0')
+	nbr = n;
+	if (nbr < 0)
 	{
-		i = ft_strlen(str);
-		return ((char *)str + i++);
+		ft_putchar_fd('-', fd);
+		nbr = -nbr;
 	}
-	while (str[i])
+	if (nbr >= 10)
 	{
-		if (str[i] == ch)
-			return ((char *)str + i);
-		i++;
+		ft_putnbr_fd(nbr / 10, fd);
+		ft_putchar_fd((nbr % 10) + '0', fd);
 	}
-	return (NULL);
+	else
+		ft_putchar_fd(nbr + '0', fd);
 }

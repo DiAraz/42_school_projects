@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 10:21:14 by daraz             #+#    #+#             */
-/*   Updated: 2023/08/28 08:22:33 by daraz            ###   ########.fr       */
+/*   Created: 2023/08/30 12:08:36 by daraz             #+#    #+#             */
+/*   Updated: 2023/08/30 12:09:50 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,14 @@
 
 /*
 	DESCRIPTION :
-	The function ft_strchr finds the first occurrence of character c in
-	string str.
+	The function ft_putchar_fd writes the given character to the given
+	file descriptor.
 
 	RETURN VALUE :
-	A pointer to the first occurrence of c in str.
-	NULL if c is not found.
+	None.
 */
 
-char	*ft_strchr(const char *str, int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	int				i;
-	unsigned char	ch;
-
-	i = 0;
-	ch = c;
-	if (ch == '\0')
-	{
-		i = ft_strlen(str);
-		return ((char *)str + i++);
-	}
-	while (str[i])
-	{
-		if (str[i] == ch)
-			return ((char *)str + i);
-		i++;
-	}
-	return (NULL);
+	write(fd, &c, 1);
 }

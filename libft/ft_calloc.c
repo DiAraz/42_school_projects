@@ -1,44 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 10:21:14 by daraz             #+#    #+#             */
-/*   Updated: 2023/08/28 08:22:33 by daraz            ###   ########.fr       */
+/*   Created: 2023/08/28 12:05:02 by daraz             #+#    #+#             */
+/*   Updated: 2023/08/28 12:14:30 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "libft.h"
 
 /*
 	DESCRIPTION :
-	The function ft_strchr finds the first occurrence of character c in
-	string str.
+	The function ft_calloc allocates memory for an array of count elements
+	of size bytes each and sets the memory to zero.
 
 	RETURN VALUE :
-	A pointer to the first occurrence of c in str.
-	NULL if c is not found.
+	The pointer to the allocated memory. NULL if the memory allocation fails.
 */
 
-char	*ft_strchr(const char *str, int c)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int				i;
-	unsigned char	ch;
+	void	*r;
 
-	i = 0;
-	ch = c;
-	if (ch == '\0')
-	{
-		i = ft_strlen(str);
-		return ((char *)str + i++);
-	}
-	while (str[i])
-	{
-		if (str[i] == ch)
-			return ((char *)str + i);
-		i++;
-	}
-	return (NULL);
+	r = malloc(count * size);
+	if (!r)
+		return (NULL);
+	ft_bzero(r, size * count);
+	return (r);
 }
