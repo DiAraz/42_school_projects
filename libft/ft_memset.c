@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 10:25:57 by daraz             #+#    #+#             */
-/*   Updated: 2023/08/28 08:20:53 by daraz            ###   ########.fr       */
+/*   Updated: 2023/09/07 20:07:36 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char   *p;
+	unsigned char	*p;
 
 	p = (unsigned char *)b;
 	while (len > 0)

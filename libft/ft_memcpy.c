@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 11:59:20 by daraz             #+#    #+#             */
-/*   Updated: 2023/08/15 12:14:27 by daraz            ###   ########.fr       */
+/*   Updated: 2023/09/07 20:07:18 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
 	A pointer to dst.
 */
 
-void    *ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char   *dst_p;
+	unsigned char	*dst_p;
 	unsigned char	*src_p;
 
 	dst_p = (unsigned char *)dst;

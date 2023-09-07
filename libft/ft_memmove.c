@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 14:15:29 by daraz             #+#    #+#             */
-/*   Updated: 2023/08/16 10:19:54 by daraz            ###   ########.fr       */
+/*   Updated: 2023/09/07 20:06:11 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@
 	A pointer to dst.
 */
 
-void    *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *dst_p;
-	unsigned char *src_p;
+	unsigned char	*dst_p;
+	unsigned char	*src_p;
 
 	dst_p = dst;
-	src_p = (unsigned char*)src;
+	src_p = (unsigned char *)src;
 	if (dst < src)
 		return (ft_memcpy(dst, src, len));
 	if (dst > src)
