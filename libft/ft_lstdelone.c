@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 07:38:53 by daraz             #+#    #+#             */
-/*   Updated: 2023/09/07 19:54:46 by daraz            ###   ########.fr       */
+/*   Updated: 2023/09/14 09:44:26 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst)
+	if (!del)
 		return ;
-	if (del)
-		(del)(lst->content);
+	if (lst)
+		del (lst->content);
 	free(lst);
 }

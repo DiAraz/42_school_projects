@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 12:05:02 by daraz             #+#    #+#             */
-/*   Updated: 2023/09/07 19:58:59 by daraz            ###   ########.fr       */
+/*   Updated: 2023/09/14 09:51:20 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,13 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*r;
+	size_t	temp;
 
+	if (count == 0)
+		return (malloc(0));
+	temp = count * size;
+	if (temp / count != size)
+		return (0);
 	r = malloc(count * size);
 	if (!r)
 		return (NULL);

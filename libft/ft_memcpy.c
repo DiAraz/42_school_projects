@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 11:59:20 by daraz             #+#    #+#             */
-/*   Updated: 2023/09/08 07:58:10 by daraz            ###   ########.fr       */
+/*   Updated: 2023/09/14 09:45:30 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*dst_p;
 	unsigned char	*src_p;
 
+	if (dst == NULL && src == NULL)
+		return (dst);
 	dst_p = (unsigned char *)dst;
 	src_p = (unsigned char *)src;
 	while (n > 0)

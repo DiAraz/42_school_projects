@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 17:55:26 by daraz             #+#    #+#             */
-/*   Updated: 2023/08/16 10:19:45 by daraz            ###   ########.fr       */
+/*   Updated: 2023/09/14 09:58:50 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	d_size;
 	size_t	s_size;
 
+	if (dstsize == 0)
+		return (ft_strlen(src));
 	d_size = ft_strlen(dst);
 	s_size = ft_strlen(src);
 	if (dstsize <= d_size)
