@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:50:20 by daraz             #+#    #+#             */
-/*   Updated: 2023/09/14 09:47:38 by daraz            ###   ########.fr       */
+/*   Updated: 2023/10/02 11:06:40 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		s[len] = s1[len];
 		len++;
 	}
-	i = 0;
-	while (s2[i])
-	{
+	i = -1;
+	while (s2[++i])
 		s[len + i] = s2[i];
-		i++;
-	}
 	return (s);
 }
