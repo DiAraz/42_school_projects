@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:19:55 by daraz             #+#    #+#             */
-/*   Updated: 2023/10/07 14:19:58 by daraz            ###   ########.fr       */
+/*   Updated: 2023/11/11 15:11:06 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,7 @@
 # define WRITE_END	1
 
 int		error(void);
-void	arg_error(int flag);
 void	execute(char *argv, char **env);
 int		open_file(char *argv, int i);
-
-/* bonus */
-int		ft_get_next_line(char **line);
 
 #endif

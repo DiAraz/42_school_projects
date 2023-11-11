@@ -6,13 +6,13 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 07:32:19 by daraz             #+#    #+#             */
-/*   Updated: 2023/11/11 13:13:12 by daraz            ###   ########.fr       */
+/*   Updated: 2023/11/11 15:16:00 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pipex.h"
 
-void	child(char **argv, char **env, int *fd)
+void	child_process(char **argv, char **env, int *fd)
 {
 	int	infile;
 
@@ -25,7 +25,7 @@ void	child(char **argv, char **env, int *fd)
 	execute(argv[2], env);
 }
 
-void	parent(char **argv, char **env, int *fd)
+void	parent_process(char **argv, char **env, int *fd)
 {
 	int	outfile;
 
@@ -51,11 +51,15 @@ int	main(int argc, char *argv[], char *env[])
 		if (pid == -1)
 			error();
 		if (pid == 0)
-			child(argv, env, fd);
+			child_process(argv, env, fd);
 		waitpid(pid, NULL, 0);
-		parent(argv, env, fd);
+		parent_process(argv, env, fd);
 	}
 	else
-		arg_error(0);
+	{
+		ft_putstr_fd("Error: invalid arguments\n", 2);
+		ft_putstr_fd("Usage: ./pipex file1 cmd1 cmd2 file2\n", 1);
+		exit(EXIT_SUCCESS);
+	}
 	return (0);
 }

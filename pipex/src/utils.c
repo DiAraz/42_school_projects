@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 07:33:28 by daraz             #+#    #+#             */
-/*   Updated: 2023/10/07 11:23:35 by daraz            ###   ########.fr       */
+/*   Updated: 2023/11/11 15:10:54 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,6 @@ int	error(void)
 {
 	perror("Error: ");
 	return (1);
-}
-
-void	arg_error(int flag)
-{
-	ft_putstr_fd("Error: invalid arguments\n", 2);
-	if (flag)
-		ft_putstr_fd("Usage: ./bonus here_doc LIMITATOR cmd1 cmd2 outfile\n", 1);
-	else
-		ft_putstr_fd("Usage: ./pipex infile cmd1 cmd2 outfile\n", 1);
-	exit(EXIT_SUCCESS);
 }
 
 char	*find_path(char *cmd, char **env)
