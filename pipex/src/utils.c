@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 07:33:28 by daraz             #+#    #+#             */
-/*   Updated: 2023/11/11 15:10:54 by daraz            ###   ########.fr       */
+/*   Updated: 2023/11/11 15:52:05 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,8 @@ int	open_file(char *argv, int i)
 
 	file = 0;
 	if (i == 0)
-		file = open(argv, O_WRONLY | O_CREAT | O_APPEND | O_CLOEXEC, 0777);
-	else if (i == 1)
 		file = open(argv, O_WRONLY | O_CREAT | O_TRUNC | O_CLOEXEC, 0777);
-	else if (i == 2)
+	else if (i == 1)
 		file = open(argv, O_RDONLY | O_CLOEXEC, 0777);
 	if (file == -1)
 	{

@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 07:32:19 by daraz             #+#    #+#             */
-/*   Updated: 2023/11/11 15:16:00 by daraz            ###   ########.fr       */
+/*   Updated: 2023/11/11 15:55:19 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	child_process(char **argv, char **env, int *fd)
 {
 	int	infile;
 
-	infile = open_file(argv[1], 2);
+	infile = open_file(argv[1], 1);
 	dup2(fd[WRITE_END], STDOUT_FILENO);
 	close(fd[WRITE_END]);
 	dup2(infile, STDIN_FILENO);
@@ -29,7 +29,7 @@ void	parent_process(char **argv, char **env, int *fd)
 {
 	int	outfile;
 
-	outfile = open_file(argv[4], 1);
+	outfile = open_file(argv[4], 0);
 	dup2(fd[READ_END], STDIN_FILENO);
 	close(fd[READ_END]);
 	dup2(outfile, STDOUT_FILENO);

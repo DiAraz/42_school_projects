@@ -6,7 +6,7 @@
 #    By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 10:05:16 by daraz             #+#    #+#              #
-#    Updated: 2023/11/11 15:05:26 by daraz            ###   ########.fr        #
+#    Updated: 2023/11/11 15:59:27 by daraz            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = pipex
 CC = cc
 FLAGS = -g #-Wall -Werror -Wextra
 OBJ = obj/main.o obj/utils.o
+OBJ_DIR = obj
 LIBFT = obj/libft/libft.o
 LIBFT_DIR = src/libft
 NAME_H = include/pipex.h
@@ -35,7 +36,7 @@ $(LIBFT): $(LIBFT_DIR)/*.c
 	@make fclean -C $(LIBFT_DIR)
 
 clean:
-	@$(RM) $(OBJ) $(OBJ_M) $(LIBFT)
+	@$(RM) $(OBJ) $(OBJ_M) $(LIBFT) rm -rf $(OBJ_DIR)
 
 fclean: clean
 	@$(RM) $(NAME)
