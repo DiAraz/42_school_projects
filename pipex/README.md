@@ -1,6 +1,26 @@
+Usage
+
+Regular pipex execution
+
+Pipex can handle 2 or more commands. To execute:
+
+$ ./pipex input_file command1 command2 output_file
+
+The output will be written to the specified output file. If the output file exists, it will be overwritten. This replicates the shell command:
+
+$ < input_file command1 | command2 > output_file
+
+Each command can be given arguments and options if surrounded by quotation marks. For example:
+
+$ ./pipex example.txt "cat -e" "grep x" outfile.txt
+
+
 Good to remember:
 
 The child process and the parent process both continue to execute from the point of the fork call.
+Child process has pid 0. To work in parent process we use pid !=0.
+The function execve replaces the current process, should be called in child process.
+
 
 New functions to learn:
 
@@ -34,3 +54,17 @@ wait/waitpid
                 pid: the PID of the child process we should wait for.
 
                 options: A set of flags that control the behavior of the waitpid function. Common options include WNOHANG (return immediately if no child has terminated) and WUNTRACED (report stopped child processes).
+
+execve
+
+    Use to replace the current process image with a new one specified by the path to the executable file. This allows a process to execute a different program.
+
+    Include <unistd.h> library.
+
+    Prototype: int execve(const char *pathname, char *const argv[], char *const envp[]);
+
+                pathname: The path to the binary executable file to be executed.
+
+                argv: An array of strings representing the arguments passed to the new program. The first element (argv[0]) is conventionally the name of the program itself, and the last element must be NULL to terminate the argument list.
+
+                envp: An array of strings representing the environment variables to be set for the new program. Like argv, this array must also be terminated with a NULL pointer.
