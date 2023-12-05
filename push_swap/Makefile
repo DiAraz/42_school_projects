@@ -6,7 +6,7 @@
 #    By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/05 17:07:39 by daraz             #+#    #+#              #
-#    Updated: 2023/12/05 17:07:42 by daraz            ###   ########.fr        #
+#    Updated: 2023/12/05 17:14:01 by daraz            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,11 @@ SRC_PATH = src/
 OBJ_PATH = obj/
 
 SRC		= main.c \
-		input_check.c input_check_utils.c \
+		check_input.c check_input_utils.c \
 		initialization.c \
 		stack.c \
 		swap.c push.c rotate.c reverse_rotate.c \
-		sort_tiny.c sort.c \
+		tiny_sort.c sort.c \
 		position.c cost.c do_move.c \
 		utils.c
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
