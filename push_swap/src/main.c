@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 18:06:58 by daraz             #+#    #+#             */
-/*   Updated: 2023/12/05 10:16:16 by daraz            ###   ########.fr       */
+/*   Updated: 2023/12/06 07:57:05 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 		sort(stack_a, stack_b);
 }
 /*  main:
-    We check if the input is correct, then we initialize stacks, assign indexes and perform sorting algorithm. 
+    We check if the input is correct, then we initialize stacks,
+	assign indexes and perform sorting algorithm. 
     After we free the stacks and end the program.
 */
 
