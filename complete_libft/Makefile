@@ -6,7 +6,7 @@
 #    By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/07 12:54:45 by daraz             #+#    #+#              #
-#    Updated: 2023/12/09 15:23:25 by daraz            ###   ########.fr        #
+#    Updated: 2023/12/09 15:49:43 by daraz            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,21 @@ SRC = ft_isalpha \
 	ft_lstmap \
 	get_next_line \
 	get_next_line_bonus \
-	get_next_line_utils
+	get_next_line_utils \
+	ft_printf \
+	ft_flags_utils \
+	ft_flags \
+	ft_nbr_len \
+	ft_print_char \
+	ft_print_flag \
+	ft_print_hex \
+	ft_print_int \
+	ft_print_ptr \
+	ft_print_str \
+	ft_print_unsigned \
+	ft_printf_itoa \
+	ft_printf_utoa \
+	ft_printf_xtoa
 
 SRCS = $(addsuffix .c, $(SRC))
 OBJS = $(addsuffix .o, $(SRC))
