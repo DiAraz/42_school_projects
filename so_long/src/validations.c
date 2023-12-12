@@ -1,39 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_utils.c                                        :+:      :+:    :+:   */
+/*   validations.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/10 17:44:22 by daraz             #+#    #+#             */
-/*   Updated: 2023/12/12 09:42:09 by daraz            ###   ########.fr       */
+/*   Created: 2023/12/12 09:55:13 by daraz             #+#    #+#             */
+/*   Updated: 2023/12/12 09:58:16 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int count_collectibles(t_game *game)
+void validation(t_game *game, int fd)
 {
-    int x;
-    int y;
-    int collectables;
-
-    x = 0;
-    y = 0;
-    collectables = 0;
-
-    while (x < game->line)
-    {
-        while (y < game->col)
-        {
-            if (game->map[x][y] == 'C')
-            {
-                collectables++;
-            }
-            y++;
-        }
-        y = 0;
-        x++;
-    }
-    return (collectables);
+    ft_printf("Validations commence...\n");
+    check_map(game);
+    valid_map(game);
+    valid_path(game, fd);
 }

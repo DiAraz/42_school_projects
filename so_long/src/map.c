@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/10 15:54:51 by daraz             #+#    #+#             */
-/*   Updated: 2023/12/10 16:10:12 by daraz            ###   ########.fr       */
+/*   Created: 2023/12/12 09:42:40 by daraz             #+#    #+#             */
+/*   Updated: 2023/12/12 09:51:23 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void check_args(t_game *game, int argc, char **argv)
+void get_maps(t_game *game, int fd)
 {
-    if (argc != 2)
-        ft_exit("Error\nNumber of arguments must be 2\n", game);
-    if (ft_strncmp(argv[1] + ft_strlen(argv[1]) - 4, ".ber", 4))
+    int i;
+    char *c;
+    int y;
+
+    i = 0;
+    y = game->line + 1;
+    game->map = (char **)malloc(sizeof(char *) * y);
+    if (!game->map)
+        ft_exit("Error\n", game);
+    while (i < y)
     {
-        ft_printf("Error\nMap file type must be \".ber\"\n");
-        exit(0);
+        c = get_next_line(fd);
+        game->map[i] = ft_strtrim(c, "\n");
+        i++;
+        free(c);
     }
 }

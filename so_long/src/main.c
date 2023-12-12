@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 15:43:57 by daraz             #+#    #+#             */
-/*   Updated: 2023/12/10 18:14:10 by daraz            ###   ########.fr       */
+/*   Updated: 2023/12/12 09:54:44 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int main(int argc, char **argv)
     game.line = get_line_size(&game, fd_y);
     game.col = get_col_size(&game, fd_x);
     fd = open(argv[1], O_RDONLY);
+    get_maps(&game, fd);
+    validation(&game, fd_map);
     if (game.col == -1)
 		ft_exit("Error\n", &game);
     close(fd_x);
