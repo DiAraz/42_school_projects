@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 15:43:57 by daraz             #+#    #+#             */
-/*   Updated: 2023/12/12 09:54:44 by daraz            ###   ########.fr       */
+/*   Updated: 2023/12/13 10:26:53 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,18 @@ static void	start_map(t_game *game)
 	game->col = 0;
 	game->end_game = 0;
 	game->move = 1;
+}
+
+void	start_game(t_game *game)
+{	
+	game->mlx = mlx_init();
+	game->win = mlx_new_window(game->mlx, game->col * 64,
+			game->line * 64, "So_long");
+	mlx_hook(game->win, 02, 1L, key_handler, game);
+	mlx_hook(game->win, 17, 1L << 17, close_window, game);
+	put_images(game);
+	render_img(game);
+	mlx_loop(game->mlx);
 }
 
 int main(int argc, char **argv)
@@ -50,5 +62,6 @@ int main(int argc, char **argv)
 	close(fd_y);
 	close(fd);
 	close(fd_map);
-    
+    player_position(&game);
+    start_game(&game);
 }

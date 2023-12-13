@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 15:54:48 by daraz             #+#    #+#             */
-/*   Updated: 2023/12/12 11:40:55 by daraz            ###   ########.fr       */
+/*   Updated: 2023/12/12 11:44:53 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,12 @@ void	free_map_floodfill(t_game *game)
 		i++;
 	}
 	free(game->map_floodfill);
+}
+
+int	close_window(t_game *game)
+{
+	mlx_destroy_window(game->mlx, game->win);
+	free_img(game);
+	free_map(game);
+	exit (0);
 }

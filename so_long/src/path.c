@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 11:24:17 by daraz             #+#    #+#             */
-/*   Updated: 2023/12/12 11:40:02 by daraz            ###   ########.fr       */
+/*   Updated: 2023/12/13 10:46:40 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,49 @@ void map_path_malloc(t_game *game, int fd)
 	}
 }
 
+bool	fill(t_game *game, char c, int line, int col)
+{
+	static bool		exit = false;
+	static int		cols = 0;
+
+	if (line < 0 || col < 0 || line >= game->line || col >= game->col)
+		return (false);
+	else if (game->map_floodfill[line][col] == 'X')
+		return (false);
+	else if (game->map_floodfill[line][col] == '1')
+		return (false);
+	else if (game->map_floodfill[line][col] == 'E')
+		exit = true;
+	if (game->map_floodfill[line][col] == 'C')
+		cols++;
+	game->map_floodfill[line][col] = 'X';
+	fill(game, c, line + 1, col);
+	fill(game, c, line, col + 1);
+	fill(game, c, line - 1, col);
+	fill(game, c, line, col - 1);
+	return (cols == game->score && exit);
+}
+
+int	floodfill(t_game *game)
+{
+	char	b;
+	int		line;
+	int		col;
+	bool	valid;
+
+	b = game->map_floodfill[game->player_y][game->player_x];
+	line = game->player_y;
+	col = game->player_x;
+	valid = fill(game, b, line, col);
+	return (valid);
+}
+
 void	valid_path(t_game *game, int fd)
 {
-	map_malloc_path(game, fd);
+	map_path_malloc(game, fd);
 	if (!floodfill(game))
 	{
-		ft_printf ("Error\nInvalid path to exit on the map\n");
+		ft_printf ("Error\nInvalid path to the exit on the map\n");
 		free_img(game);
 		close(fd);
 	}
