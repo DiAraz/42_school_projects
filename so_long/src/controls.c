@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 12:47:31 by daraz             #+#    #+#             */
-/*   Updated: 2023/12/13 10:20:54 by daraz            ###   ########.fr       */
+/*   Updated: 2023/12/13 11:45:22 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	valid_move(t_game *game, int col, int line, int pressed_key)
 	if (game->map[line][col] == 'E' && game->score == 0)
 	{
 		game->end_game = 1;
-		ft_printf("\n\nYOU WIN ⚔️🏆\n\n");
+		ft_printf("\n\nYOU WIN 🏆\n\n");
 		close_window(game);
 	}
 	if (pressed_key != W && pressed_key != S && pressed_key != A
