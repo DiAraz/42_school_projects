@@ -22,10 +22,14 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	line = "";
-	while (line != NULL)
+	/* while (line != NULL)
 	{
-		line = get_next_line(fd);
+		line = get_next_line(fd); // for the entire contents of the given file
 		printf("%s", line);
-	}
+	} */
+
+	line = get_next_line(fd);    // for one line
+		printf("%s", line);
+
 	return (0);
 }
