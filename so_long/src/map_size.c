@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 17:52:29 by daraz             #+#    #+#             */
-/*   Updated: 2023/12/10 18:11:58 by daraz            ###   ########.fr       */
+/*   Updated: 2023/12/18 10:45:44 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	get_line_size(t_game *game, int fd)
 		free(c);
 	}
 	if (x == 0)
-	{	
+	{
 		ft_printf("Error\nThe file is empty or not exist.");
 		exit(0);
 	}

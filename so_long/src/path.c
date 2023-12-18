@@ -6,13 +6,13 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 11:24:17 by daraz             #+#    #+#             */
-/*   Updated: 2023/12/13 10:46:40 by daraz            ###   ########.fr       */
+/*   Updated: 2023/12/18 10:46:03 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void map_path_malloc(t_game *game, int fd)
+void	map_path_malloc(t_game *game, int fd)
 {
 	int		i;
 	char	*c;

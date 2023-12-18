@@ -6,15 +6,15 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 12:35:02 by daraz             #+#    #+#             */
-/*   Updated: 2023/12/13 10:47:37 by daraz            ###   ########.fr       */
+/*   Updated: 2023/12/18 10:55:03 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#include "libft/libft.h"
-#include "minilibx/mlx.h"
+# include "libft/libft.h"
+# include "minilibx/mlx.h"
 
 # include <stdio.h>
 # include <fcntl.h>
@@ -26,7 +26,7 @@
 # define TREASURE "./images/exit.xpm"
 # define WALL "./images/wall.xpm"
 # define FLOOR "./images/floor.xpm"
-# define ON_TREASURE "./images/on_treasure.xpm"
+# define ON_TRSR "./images/on_treasure.xpm"
 
 # define W 119
 # define A 97

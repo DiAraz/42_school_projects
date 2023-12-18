@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 17:44:22 by daraz             #+#    #+#             */
-/*   Updated: 2023/12/13 10:33:45 by daraz            ###   ########.fr       */
+/*   Updated: 2023/12/18 10:29:40 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	put_images(t_game *game)
 	game->img.floor = mlx_xpm_file_to_image(game->mlx, FLOOR, &len, &len);
 	game->img.exit = mlx_xpm_file_to_image(game->mlx, TREASURE, &len, &len);
 	game->img.collectible = mlx_xpm_file_to_image(game->mlx, KEY, &len, &len);
-	game->img.on_box = mlx_xpm_file_to_image(game->mlx, ON_TREASURE, &len, &len);
+	game->img.on_box = mlx_xpm_file_to_image(game->mlx, ON_TRSR, &len, &len);
 }
 
 void	put_map(int x, int y, char c, t_game *game)
@@ -47,30 +47,29 @@ void	put_map(int x, int y, char c, t_game *game)
 			game->img.on_box, x * 64, y * 64);
 }
 
-int count_collectibles(t_game *game)
+int	count_collectibles(t_game *game)
 {
-    int x;
-    int y;
-    int collectables;
+	int	x;
+	int	y;
+	int	collectables;
 
-    x = 0;
-    y = 0;
-    collectables = 0;
-
-    while (x < game->line)
-    {
-        while (y < game->col)
-        {
-            if (game->map[x][y] == 'C')
-            {
-                collectables++;
-            }
-            y++;
-        }
-        y = 0;
-        x++;
-    }
-    return (collectables);
+	x = 0;
+	y = 0;
+	collectables = 0;
+	while (x < game->line)
+	{
+		while (y < game->col)
+		{
+			if (game->map[x][y] == 'C')
+			{
+				collectables++;
+			}
+			y++;
+		}
+		y = 0;
+		x++;
+	}
+	return (collectables);
 }
 
 void	player_position(t_game *game)

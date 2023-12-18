@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 15:54:48 by daraz             #+#    #+#             */
-/*   Updated: 2023/12/12 11:44:53 by daraz            ###   ########.fr       */
+/*   Updated: 2023/12/18 10:37:35 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,25 +31,25 @@ void	free_img(t_game *game)
 	exit(0);
 }
 
-void ft_exit(char *str, t_game *game)
+void	ft_exit(char *str, t_game *game)
 {
-        ft_printf("%s", str);
-        if (game->map[0])
-            free_map(game);
-        exit(0);
+	ft_printf("%s", str);
+	if (game->map[0])
+		free_map(game);
+	exit(0);
 }
 
-void free_map(t_game *game)
+void	free_map(t_game *game)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (game->map[i])
-    {
-        free(game->map[i]);
-        i++;
-    }
-    free(game->map);
+	i = 0;
+	while (game->map[i])
+	{
+		free(game->map[i]);
+		i++;
+	}
+	free(game->map);
 }
 
 void	free_map_floodfill(t_game *game)
