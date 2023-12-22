@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 		printf("%s", line);
 	} */
 
-    line = get_next_line(fd);        // for one line
+	line = get_next_line(fd);        // for one line
 		printf("%s", line);
 
 	fd = close(fd);
