@@ -1,7 +1,7 @@
 # get_next_line
 
 <p align="center">
-  <img src="https://github.com/DiAraz/42_school_projects/assets/128155906/aa79875e-3341-47e1-b870-eec2637d8d7e" />
+  <img src="https://github.com/DiAraz/DiAraz/blob/main/42_badges/get_next_linee.png" />
 </p>
 
 

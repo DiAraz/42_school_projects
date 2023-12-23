@@ -1,7 +1,7 @@
 # Born2beroot
 
 <p align="center">
-  <img src="https://github.com/DiAraz/42_school_projects/assets/128155906/e399867b-9433-4aa5-8d29-314c84d4816a" />
+  <img src="https://github.com/DiAraz/DiAraz/blob/main/42_badges/born2beroote.png" />
 </p>
 
 

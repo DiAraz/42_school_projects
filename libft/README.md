@@ -1,7 +1,7 @@
 # libft
 
 <p align="center">
-  <img src="https://github.com/DiAraz/42_school_projects/assets/128155906/75baa81b-2891-41ee-9a7c-1f5582745ac6" />
+  <img src="https://github.com/DiAraz/DiAraz/blob/main/42_badges/libfte.png" />
 </p>
 
 42 school's first project, libft, is about learning how the standard functions of C programming work, by coding them from scratch and creating our very own library. The library will be used in future 42 school assignments.

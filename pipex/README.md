@@ -1,7 +1,7 @@
 # pipex
 
 <p align="center">
-  <img src="https://github.com/DiAraz/42_school_projects/assets/128155906/bbbd7b83-6277-4356-a3c9-f5b03782be2b" />
+  <img src="https://github.com/DiAraz/DiAraz/blob/main/42_badges/pipexe.png" />
 </p>
 
 Pipex is a small command-line program that emulates the functionality of the shell's pipe feature. It reads input from a file, runs two commands as separate child processes, and then sends the output of the first command as input to the second command. The output is then written to another file. Pipex is implemented using the C programming language and various system calls, such as fork, pipe, dup2, and execve.

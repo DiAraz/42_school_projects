@@ -1,7 +1,7 @@
 # ft_printf
 
 <p align="center">
-  <img src="https://github.com/DiAraz/42_school_projects/assets/128155906/96941a40-0e52-49a4-a9ad-a5722e3f9863" />
+  <img src="https://github.com/DiAraz/DiAraz/blob/main/42_badges/ft_printfe.png" />
 </p>
 
 For the ft_printf project of the 42 school, we must recreate the C library printf function. This project teaches us about variadic arguments as well as structures if we plan to implement printf's extra flags.
