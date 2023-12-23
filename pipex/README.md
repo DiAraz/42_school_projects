@@ -14,7 +14,7 @@ $ < input_file command1 | command2 > output file
 ## Usage
 To compile, use ```make```.
 
-Then, to run the program, run the following command:
+Then run the following command:
 
 ```
 ./pipex file1 cmd1 cmd2 file2
