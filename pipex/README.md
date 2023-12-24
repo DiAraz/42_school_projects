@@ -12,7 +12,7 @@ $ < input_file command1 | command2 > output file
 ```
 
 ## Usage
-To compile, use ```make```.
+Git clone the repository and cd into it. To compile, use ```make```.
 
 Then run the following command:
 
