@@ -6,15 +6,22 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 10:45:18 by daraz             #+#    #+#             */
-/*   Updated: 2023/12/23 12:08:09 by daraz            ###   ########.fr       */
+/*   Updated: 2023/12/28 12:23:47 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int mutex_init(t_rules *rules)
+/*
+** We initialize as many mutexes as there are forks.
+** Additionally, we initiate a mutex for
+** writing and another one for food checking.
+** Returns 2 in case the mutex is not generated correctly.
+*/
+
+int	mutex_init(t_rules *rules)
 {
-    int	i;
+	int	i;
 
 	i = rules->n_philo;
 	while (--i >= 0)
@@ -31,9 +38,9 @@ int mutex_init(t_rules *rules)
 	return (0);
 }
 
-int philo_init(t_rules *rules)
+int	philo_init(t_rules *rules)
 {
-    int	i;
+	int	i;
 
 	i = rules->n_philo;
 	while (--i >= 0)
@@ -48,9 +55,9 @@ int philo_init(t_rules *rules)
 	return (0);
 }
 
-int param_init(t_rules *rules, char **argv)
+int	param_init(t_rules *rules, char **argv)
 {
-    rules->n_philo = ft_atoi(argv[1]);
+	rules->n_philo = ft_atoi(argv[1]);
 	rules->death_time = ft_atoi(argv[2]);
 	rules->eat_time = ft_atoi(argv[3]);
 	rules->sleep_time = ft_atoi(argv[4]);
@@ -68,8 +75,8 @@ int param_init(t_rules *rules, char **argv)
 	}
 	else
 		rules->must_eat = -1;
-    if (mutex_init(rules))
-        return (2);
-    philo_init(rules);
-    return (0);
+	if (mutex_init(rules))
+		return (2);
+	philo_init(rules);
+	return (0);
 }

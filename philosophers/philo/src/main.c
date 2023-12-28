@@ -6,16 +6,16 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 10:12:33 by daraz             #+#    #+#             */
-/*   Updated: 2023/12/23 12:17:31 by daraz            ###   ########.fr       */
+/*   Updated: 2023/12/28 12:27:16 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int main(int ac, char **argv)
+int	main(int ac, char **argv)
 {
-	t_rules rules;
-	int parameters;
+	t_rules	rules;
+	int		parameters;
 
 	if (ac != 5 && ac != 6)
 		return (ft_error("Invalid inputs"));
