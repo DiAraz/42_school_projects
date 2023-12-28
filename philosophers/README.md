@@ -8,7 +8,7 @@ Philosophers is a 42 school project designed around Edsger Dijkstra's famous din
 
 ---
 
-## General Description
+## Description
 
 The subject describes the problem as follows:
 
@@ -44,7 +44,7 @@ Git clone the project:
 ```shell
 cd philosophers/philo
 ```
-To compile, use ```make``` or:
+To compile, use ```make```:
 
 ```shell
 make
