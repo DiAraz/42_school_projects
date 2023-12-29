@@ -4,9 +4,12 @@
   <img src="https://github.com/DiAraz/DiAraz/blob/main/42_badges/so_longe.png"/>
 </p>
 
-so_long is a small 2D game where the player has to collect all the collectibles and chose the nearest exit.
+so_long project is focused on developing a 2D game that can be interacted with using a keyboard.
+The player has to collect all the collectibles and chose the nearest exit.
 
-![so_long](https://github.com/DiAraz/42_school_projects/assets/128155906/a749539d-285c-4f39-bd3a-a4e3957de8ce)
+---
+
+![so_long_cropped](https://github.com/DiAraz/42_school_projects/assets/128155906/c07730ea-d420-48e3-b6c7-f607a888ff0d)
 
 ## Usage
 
