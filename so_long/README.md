@@ -4,10 +4,11 @@
   <img src="https://github.com/DiAraz/DiAraz/blob/main/42_badges/so_longe.png"/>
 </p>
 
+## Description
+
 so_long project is focused on developing a 2D game that can be interacted with using a keyboard.
 The player has to collect all the collectibles and chose the nearest exit.
 
----
 
 ![so_long_cropped](https://github.com/DiAraz/42_school_projects/assets/128155906/c07730ea-d420-48e3-b6c7-f607a888ff0d)
 
