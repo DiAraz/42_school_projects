@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 10:16:42 by daraz             #+#    #+#             */
-/*   Updated: 2023/12/28 12:00:17 by daraz            ###   ########.fr       */
+/*   Updated: 2024/01/03 16:12:06 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ long long	time_diff(long long present, long long past);
 void		ft_sleep(long long time_sleep, t_rules *r);
 
 /*		---	program end	---		*/
+void		exit_philo(t_rules *r, t_philosopher *p);
 int			ft_stop_checker(int death, int goal);
 void		death_checker_loop(t_rules *r, t_philosopher *p);
 void		death_by_goal(t_rules *r, t_philosopher *p);

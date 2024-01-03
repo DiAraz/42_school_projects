@@ -6,11 +6,26 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 14:25:20 by daraz             #+#    #+#             */
-/*   Updated: 2023/12/28 12:19:35 by daraz            ###   ########.fr       */
+/*   Updated: 2024/01/03 16:10:40 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+void	exit_philo(t_rules *r, t_philosopher *p)
+{
+	int	i;
+
+	i = -1;
+	while (++i < r->n_philo)
+		pthread_join(p[i].thread_id, NULL);
+	i = -1;
+	while (++i < r->n_philo)
+		pthread_mutex_destroy(&(r->fork[i]));
+	pthread_mutex_destroy(&(r->writing));
+	pthread_mutex_destroy(&(r->meal_check));
+	pthread_mutex_destroy(&(r->stop_check));
+}
 
 int	ft_stop_checker(int death, int goal)
 {

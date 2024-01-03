@@ -6,46 +6,28 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 10:16:39 by daraz             #+#    #+#             */
-/*   Updated: 2023/12/28 12:24:42 by daraz            ###   ########.fr       */
+/*   Updated: 2024/01/03 16:13:28 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	exit_philo(t_rules *r, t_philosopher *p)
-{
-	int	i;
-
-	if (r->n_philo == 1)
-		pthread_mutex_unlock(&(r->fork[p[0].left_fork]));
-	i = -1;
-	while (++i < r->n_philo)
-		pthread_join(p[i].thread_id, NULL);
-	i = -1;
-	while (++i < r->n_philo)
-		pthread_mutex_destroy(&(r->fork[i]));
-	pthread_mutex_destroy(&(r->writing));
-	pthread_mutex_destroy(&(r->meal_check));
-	pthread_mutex_destroy(&(r->stop_check));
-}
-
-/*
-** The eating process: locks forks, checks if eating, takes time to eat,
-** then releases everything and indicates eating with (count_eat).
-*/
-
 void	eat_philo(t_philosopher *p, t_rules *r)
 {
-	pthread_mutex_lock(&(r->fork[p->left_fork]));
-	put_message(r, p->id, "has taken a fork");
-	if (r->n_philo == 1)
+	if (p->id % 2 == 1)
 	{
 		pthread_mutex_lock(&(r->fork[p->left_fork]));
-		pthread_mutex_unlock(&(r->fork[p->left_fork]));
-		return ;
+		put_message(r, p->id, "has taken a fork");
+		pthread_mutex_lock(&(r->fork[p->right_fork]));
+		put_message(r, p->id, "has taken a fork");
 	}
-	pthread_mutex_lock(&(r->fork[p->right_fork]));
-	put_message(r, p->id, "has taken a fork");
+	else
+	{
+		pthread_mutex_lock(&(r->fork[p->right_fork]));
+		put_message(r, p->id, "has taken a fork");
+		pthread_mutex_lock(&(r->fork[p->left_fork]));
+		put_message(r, p->id, "has taken a fork");
+	}
 	pthread_mutex_lock(&(r->meal_check));
 	put_message(r, p->id, "is eating");
 	pthread_mutex_lock(&(r->stop_check));
@@ -57,6 +39,29 @@ void	eat_philo(t_philosopher *p, t_rules *r)
 	ft_sleep(r->eat_time, r);
 	pthread_mutex_unlock(&(r->fork[p->left_fork]));
 	pthread_mutex_unlock(&(r->fork[p->right_fork]));
+}
+
+void	one_philo(t_philosopher *p, t_rules *r)
+{
+	put_message(r, p->id, "has taken a fork");
+}
+
+void	loop(t_philosopher *p, t_rules *r)
+{
+	int	stop;
+
+	while (42)
+	{
+		eat_philo(p, r);
+		pthread_mutex_lock(&(r->stop_check));
+		stop = ft_stop_checker((r->death), (r->eating_goal));
+		pthread_mutex_unlock(&(r->stop_check));
+		if (stop)
+			break ;
+		put_message(r, p->id, "is sleeping");
+		ft_sleep(r->sleep_time, r);
+		put_message(r, p->id, "is thinking");
+	}
 }
 
 /*
@@ -73,24 +78,17 @@ void	*eating_loop(void *void_p)
 {
 	t_philosopher	*p;
 	t_rules			*r;
-	int				stop;
 
 	p = (t_philosopher *)void_p;
 	r = (t_rules *)p->rules;
+	if (r->n_philo == 1)
+	{
+		one_philo(&p[0], r);
+		return (NULL);
+	}
 	if (p->id % 2)
 		usleep(15000);
-	while (42)
-	{
-		eat_philo(p, r);
-		pthread_mutex_lock(&(r->stop_check));
-		stop = ft_stop_checker((r->death), (r->eating_goal));
-		pthread_mutex_unlock(&(r->stop_check));
-		if (stop)
-			break ;
-		put_message(r, p->id, "is sleeping");
-		ft_sleep(r->sleep_time, r);
-		put_message(r, p->id, "is thinking");
-	}
+	loop(p, r);
 	return (NULL);
 }
 
