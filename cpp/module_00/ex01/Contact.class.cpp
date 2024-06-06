@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 11:34:24 by daraz             #+#    #+#             */
-/*   Updated: 2024/06/05 16:46:43 by daraz            ###   ########.fr       */
+/*   Updated: 2024/06/06 16:39:37 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ std::string Contact::parseUserInput(std::string str) const {
 }
 
 void    Contact::setContact(void) {
-    //std::cin.ignore();
     this->_firstName = this->parseUserInput("Enter first name: ");
     this->_lastName = this->parseUserInput("Enter last name: ");
     this->_nickName = this->parseUserInput("Enter nickname: ");
