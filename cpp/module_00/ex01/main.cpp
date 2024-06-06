@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 11:33:41 by daraz             #+#    #+#             */
-/*   Updated: 2024/06/05 16:54:35 by daraz            ###   ########.fr       */
+/*   Updated: 2024/06/06 14:29:59 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ int main() {
             phoneBook.printAllContacts();
             phoneBook.search();
             std::cout << "What is your next action?" << std::endl << std::endl;
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
         else {
             std::cout << "Provide a valid action" << std::endl;

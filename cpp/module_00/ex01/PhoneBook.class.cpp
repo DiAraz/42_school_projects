@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 11:33:35 by daraz             #+#    #+#             */
-/*   Updated: 2024/06/05 15:48:12 by daraz            ###   ########.fr       */
+/*   Updated: 2024/06/06 14:30:34 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,24 +43,35 @@ void    PhoneBook::printAllContacts(void) const {
     std::cout << std::endl;
 }
 
-int     PhoneBook::_getInput() const {
-    int     userInput = -1;
-    bool    valid = false;
-    do
-    {
+int PhoneBook::_getInput() const {
+    int userInput = -1;
+    bool valid = false;
+    std::string input;
+
+    do {
         std::cout << "Enter the contact index: " << std::flush;
-        std::cin >> userInput;
-        if (std::cin.good() && (userInput >= 0 && userInput < 8)) {
-            valid = true;
+        std::getline(std::cin, input);
+
+        if (!input.empty()) {
+            try {
+                userInput = std::stoi(input);
+                if (userInput >= 0 && userInput < 8) {
+                    valid = true;
+                } else {
+                    std::cout << "Provide a valid index." << std::endl;
+                }
+            } catch (std::invalid_argument& e) {
+                std::cout << "Provide a valid index." << std::endl;
+            } catch (std::out_of_range& e) {
+                std::cout << "Provide a valid index." << std::endl;
+            }
         } else {
-            std::cin.clear();
-            //After an invalid input, the input buffer might still contain unwanted characters (like leftover characters from a previous input).
-            //This line ensures that the entire line of input is discarded, preventing those characters from interfering with subsequent input operations.
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-            std::cout << "Provide a valid index." << std::endl;
+            std::cout << "Input cannot be empty." << std::endl;
         }
+
     } while (!valid);
-    return (userInput);
+
+    return userInput;
 }
 
 void    PhoneBook::search(void) const {
