@@ -6,12 +6,13 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 11:33:35 by daraz             #+#    #+#             */
-/*   Updated: 2024/06/06 14:30:34 by daraz            ###   ########.fr       */
+/*   Updated: 2024/06/11 14:38:29 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.class.hpp"
 #include <limits>
+#include <sstream>
 
 PhoneBook::PhoneBook()
 {
@@ -53,22 +54,16 @@ int PhoneBook::_getInput() const {
         std::getline(std::cin, input);
 
         if (!input.empty()) {
-            try {
-                userInput = std::stoi(input);
-                if (userInput >= 0 && userInput < 8) {
-                    valid = true;
-                } else {
-                    std::cout << "Provide a valid index." << std::endl;
-                }
-            } catch (std::invalid_argument& e) {
-                std::cout << "Provide a valid index." << std::endl;
-            } catch (std::out_of_range& e) {
+            std::stringstream ss(input);
+            if (ss >> userInput && ss.eof() && userInput >= 0 && userInput < 8) {
+                valid = true;
+            } else {
                 std::cout << "Provide a valid index." << std::endl;
             }
         } else {
             std::cout << "Input cannot be empty." << std::endl;
         }
-
+        
     } while (!valid);
 
     return userInput;
