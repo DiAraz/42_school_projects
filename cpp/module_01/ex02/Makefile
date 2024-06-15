@@ -5,18 +5,17 @@ FLAGS		= -Wall -Wextra -Werror -std=c++98
 
 OBJDIR = .objects
 
-FILES		= main Zombie newZombie randomChump
+FILES		= main
 
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= Zombie.hpp
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(HEADER)
+$(NAME): $(OBJ)
 	@$(CC) $(OBJ) $(OPTS) -o $(NAME)
 
-$(OBJDIR)/%.o: %.cpp $(HEADER)
+$(OBJDIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
 	@$(CC) $(FLAGS) $(OPTS) -c $< -o $@
 

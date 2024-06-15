@@ -5,30 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/15 13:06:58 by daraz             #+#    #+#             */
-/*   Updated: 2024/06/15 13:24:16 by daraz            ###   ########.fr       */
+/*   Created: 2024/06/15 14:04:41 by daraz             #+#    #+#             */
+/*   Updated: 2024/06/15 14:22:03 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-Zombie* newZombie( std::string name );
-void    randomChump( std::string name );
+int main( void )
+{
+    std::string str = "HI THIS IS BRAIN";
+    std::string *stringPTR = &str;
+    std::string &stringREF = str;
 
-int main( void ) {
-  
-    std::cout << "Paulo - zombie on stack." << std::endl;
-    
-    Zombie paulo( "Paulo" );
-    paulo.announce();
+    std::cout << "Address of string:    " << &str << "    Value of string:    " << str << std::endl;
+    std::cout << "Address of pointer:   "<< stringPTR << "    Value of pointer:   " << *stringPTR << std::endl;
+    std::cout << "Address of reference: "<< &stringREF << "    Value of reference: " << stringREF << std::endl;
 
-    std::cout << "Lena - zombie on heap." << std::endl;
-    Zombie *lena = newZombie( "Lena" );
-    lena->announce();
-    delete lena;
-
-    std::cout << "Chump - zombie from randomChump()." << std::endl;
-    randomChump( "Chump" );
-    
     return 0;
 }

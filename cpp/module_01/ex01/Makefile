@@ -5,7 +5,7 @@ FLAGS		= -Wall -Wextra -Werror -std=c++98
 
 OBJDIR = .objects
 
-FILES		= main Zombie newZombie randomChump
+FILES		= main Zombie zombieHorde
 
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
