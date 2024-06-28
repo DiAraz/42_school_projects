@@ -1,4 +1,8 @@
-## Minishell Project Summary
+# minishell
+
+<p align="center">
+  <img src="https://github.com/DiAraz/DiAraz/blob/main/42_badges/minishelle.png" />
+</p>
 
 ### Project Overview
 
