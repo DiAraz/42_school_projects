@@ -10,3 +10,5 @@
 | 2 | [pipex](https://github.com/DiAraz/42_school_projects/tree/main/pipex)               | ![Static Badge](https://img.shields.io/badge/C-0D1117?style=for-the-badge&logo=c&logoColor=blue) | Recreate the shell pipe behavior. |
 | 2 | [push_swap](https://github.com/DiAraz/42_school_projects/tree/main/push_swap)       | ![Static Badge](https://img.shields.io/badge/C-0D1117?style=for-the-badge&logo=c&logoColor=blue) | Sort a list of random integers in the least amount of moves possible. |
 | 3 | [philosophers](https://github.com/DiAraz/42_school_projects/tree/main/philosophers) | ![Static Badge](https://img.shields.io/badge/C-0D1117?style=for-the-badge&logo=c&logoColor=blue) | Solve the dining philosophers problem with threads and mutexes. |
+| 4 | [minishell](https://github.com/DiAraz/42_school_projects/tree/main/minishell) | ![Static Badge](https://img.shields.io/badge/C-0D1117?style=for-the-badge&logo=c&logoColor=blue) | Creating a simple shell. |
+
