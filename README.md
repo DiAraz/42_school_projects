@@ -10,8 +10,9 @@
 | 2 | [pipex](https://github.com/DiAraz/42_school_projects/tree/main/pipex)               | ![Static Badge](https://img.shields.io/badge/C-0D1117?style=for-the-badge&logo=c&logoColor=blue) | Recreate the shell pipe behavior. |
 | 2 | [push_swap](https://github.com/DiAraz/42_school_projects/tree/main/push_swap)       | ![Static Badge](https://img.shields.io/badge/C-0D1117?style=for-the-badge&logo=c&logoColor=blue) | Sort a list of random integers in the least amount of moves possible. |
 | 3 | [philosophers](https://github.com/DiAraz/42_school_projects/tree/main/philosophers) | ![Static Badge](https://img.shields.io/badge/C-0D1117?style=for-the-badge&logo=c&logoColor=blue) | Solve the dining philosophers problem with threads and mutexes. |
-| 4 | [minishell](https://github.com/DiAraz/42_school_projects/tree/main/minishell) | ![Static Badge](https://img.shields.io/badge/C-0D1117?style=for-the-badge&logo=c&logoColor=blue) | Create a simple shell. |
-| 5 | [cub3d](https://github.com/DiAraz/42_school_projects/tree/main/cub3d) | ![Static Badge](https://img.shields.io/badge/C-0D1117?style=for-the-badge&logo=c&logoColor=blue) | Create a dynamic view inside a 3D maze by using raycasting. |
-| 5 | [net_practice](https://github.com/DiAraz/42_school_projects/tree/main/net_practice) | ![Static Badge](https://img.shields.io/badge/shell-0D1117?style=for-the-badge&logo=gnu-bash&logoColor=white) | Solve IP addressing, subnet masks and routing issues. |
+| 3 | [minishell](https://github.com/DiAraz/42_school_projects/tree/main/minishell) | ![Static Badge](https://img.shields.io/badge/C-0D1117?style=for-the-badge&logo=c&logoColor=blue) | Create a simple shell. |
+| 4 | [cub3d](https://github.com/DiAraz/42_school_projects/tree/main/cub3d) | ![Static Badge](https://img.shields.io/badge/C-0D1117?style=for-the-badge&logo=c&logoColor=blue) | Create a dynamic view inside a 3D maze by using raycasting. |
+| 4 | [net_practice](https://github.com/DiAraz/42_school_projects/tree/main/net_practice) | ![Static Badge](https://img.shields.io/badge/shell-0D1117?style=for-the-badge&logo=gnu-bash&logoColor=white) | Solve IP addressing, subnet masks and routing issues. |
+| 5 | [inception](https://github.com/DiAraz/42_school_projects/tree/main/inception) | ![Static Badge](https://img.shields.io/badge/shell-0D1117?style=for-the-badge&logo=gnu-bash&logoColor=white) | Set up a Docker network with containers for nginx, mariadb, and wordpress. |
 
 
