@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:13:14 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/10 11:45:29 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/12 12:50:52 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,38 +23,39 @@ str		trimBlank(const str & str)
     return str.substr(first, (last - first + 1));
 }
 
-void	testInput(std::ifstream & file, int ac, char **av) {
-	str				name(av[1]);
-	str				line;
-	std::ifstream	lineTest;
+void	checkInputFile(std::ifstream &file, int argc, char **argv) {
+	if (argc != 2)
+		throw std::runtime_error("Error: Usage: ./btc [input.txt]");
 
-	if (ac != 2)
-		throw std::runtime_error("Error: Usage: ./btc [data.csv]");
-	
-	file.open(av[1], std::ifstream::in);
-	if (!file.is_open())
-		throw std::runtime_error("Error: Could not open file: " + name);
-	
-	lineTest.open(av[1], std::ifstream::in);
-	while (getline(lineTest, line))
-		if (line.empty())
+	file.open(argv[1]);
+	if (!file)
+		throw std::runtime_error("Error: Could not open file.");
+
+	std::ifstream inputFile(argv[1]);
+	std::string currentLine;
+	while (std::getline(inputFile, currentLine)) {
+		if (currentLine.empty())
 			throw std::runtime_error("Error: Empty line in input file.");
-
+	}
 }
 
-int	main(int ac, char **av) {
-	std::ifstream		file;
-	BitcoinExchange *	exchange;
+
+int	main(int argc, char **argv) {
+	std::ifstream		f;
+	BitcoinExchange *	ex;
 	
 	try {
-		testInput(file, ac, av);
-		exchange = new BitcoinExchange(file, av);
+		if (argc != 2) {
+			throw std::runtime_error("Error: Usage: ./btc [input.txt]");
+		}
+		checkInputFile(f, argc, argv);
+		ex = new BitcoinExchange(f, argv);
 	}
 	catch (const std::exception & e) {
 		std::cout << e.what() << std::endl;
 		return 1;
 	}
 
-	delete exchange;
+	delete ex;
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:12:53 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/10 12:55:19 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/12 12:51:51 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,6 @@
 #include <cstdlib>
 
 typedef std::string str;
-
-template <typename T>
-std::string itos(T nb) {
-	std::ostringstream	ss;
-	ss << nb;
-	return ss.str();
-}
-
-#define SSTR( x ) static_cast< std::ostringstream & >( \
-        ( std::ostringstream() << std::dec << x ) ).str()
 
 class BitcoinExchange {
 	public:
