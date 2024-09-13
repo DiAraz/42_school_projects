@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:13:14 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/12 12:50:52 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/13 12:31:04 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(int argc, char **argv) {
 	
 	try {
 		if (argc != 2) {
-			throw std::runtime_error("Error: Usage: ./btc [input.txt]");
+			throw std::runtime_error("Error: Usage: ./btc [input.csv]");
 		}
 		checkInputFile(f, argc, argv);
 		ex = new BitcoinExchange(f, argv);
