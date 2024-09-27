@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:16:34 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/27 10:49:42 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/27 14:50:10 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -277,7 +277,7 @@ void Server::command_exec(Request request)
 	command_map["OPER"] = &Server::ft_oper;
 	command_map["PART"] = &Server::ft_part;
 	command_map["WHO"] = &Server::ft_who;
-	command_map["MODE"] = &Server::mode_command;
+	command_map["MODE"] = &Server::ft_mode;
 	command_map["KILL"] = &Server::ft_kill;
 	command_map["KICK"] = &Server::ft_kick;
 	command_map["NOTICE"] = &Server::ft_notice;

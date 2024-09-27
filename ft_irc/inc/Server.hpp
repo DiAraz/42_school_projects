@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:14:40 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/27 10:49:42 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/27 14:50:10 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ class Server
 		void ft_topic (Request request);
 		void ft_part (Request request);
 		void ft_who (Request request);
-		void mode_command (Request request);
+		void ft_mode (Request request);
 		void ft_oper(Request request);
 		void ft_kill(Request request);
 		void ft_notice(Request request);
