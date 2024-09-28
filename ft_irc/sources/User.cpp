@@ -6,12 +6,12 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 16:03:45 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/21 08:41:52 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/28 10:30:11 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-# include "../inc/User.hpp"
+# include "../includes/User.hpp"
 
 User::User()
 	: _name("*"),

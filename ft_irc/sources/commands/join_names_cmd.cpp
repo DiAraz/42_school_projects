@@ -6,11 +6,11 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 12:21:43 by katchogl          #+#    #+#             */
-/*   Updated: 2024/09/23 16:12:09 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/28 10:33:32 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Server.hpp"
+# include "../../includes/Server.hpp"
 
 /************************************************
  *	! /JOIN /NAMES handler !

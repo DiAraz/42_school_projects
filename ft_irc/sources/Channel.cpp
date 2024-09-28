@@ -6,11 +6,11 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 08:57:40 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/23 16:26:29 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/28 10:30:32 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/Channel.hpp"
+# include "../includes/Channel.hpp"
 
 Channel::Channel() {
 	_name = "*";

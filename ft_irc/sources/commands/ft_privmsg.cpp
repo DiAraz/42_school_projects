@@ -6,11 +6,11 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 09:46:56 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/28 10:24:53 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/28 10:33:32 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Server.hpp"
+# include "../../includes/Server.hpp"
 
 std::set<std::string>	Server::split_comma(std::string targets, std::string &duplicate)
 {

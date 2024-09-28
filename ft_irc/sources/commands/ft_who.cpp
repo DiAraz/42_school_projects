@@ -6,11 +6,11 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 09:58:39 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/27 10:20:27 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/28 10:33:32 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Server.hpp"
+# include "../../includes/Server.hpp"
 
 /*
 	Command: WHO

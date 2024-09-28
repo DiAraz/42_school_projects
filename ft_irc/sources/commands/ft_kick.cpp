@@ -6,11 +6,11 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 10:48:57 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/27 14:45:24 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/28 10:32:59 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Server.hpp"
+# include "../../includes/Server.hpp"
 
 std::vector<std::string> split(const std::string& str, char delimiter)
 {

@@ -6,11 +6,11 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 08:57:34 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/23 10:22:50 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/28 10:30:21 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/Request.hpp"
+# include "../includes/Request.hpp"
 
 Request::Request(std::string input, User* user)
 {

@@ -6,11 +6,11 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 09:26:03 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/25 13:54:24 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/28 10:32:50 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Server.hpp"
+# include "../../includes/Server.hpp"
 
 /*
     Command: GLOBOPS

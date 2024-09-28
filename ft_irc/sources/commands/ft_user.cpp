@@ -6,11 +6,11 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 10:52:47 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/27 10:18:47 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/28 10:33:32 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Server.hpp"
+# include "../../includes/Server.hpp"
 
 /*
 	Command: USER

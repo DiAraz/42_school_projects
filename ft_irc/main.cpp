@@ -6,12 +6,12 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 14:19:27 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/28 09:40:03 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/28 10:29:29 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "inc/User.hpp"
-# include "inc/Server.hpp"
+# include "includes/User.hpp"
+# include "includes/Server.hpp"
 
 int	main(int argc, char **argv)
 {
