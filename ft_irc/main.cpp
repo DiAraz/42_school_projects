@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 14:19:27 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/17 10:51:02 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/28 09:40:03 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,4 @@ int	main(int argc, char **argv)
 	return(0);
 }
 
+/* https://datatracker.ietf.org/doc/html/rfc1459#section-6.2 */

@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 09:39:12 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/26 09:51:23 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/28 10:24:53 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void Server::ft_list(Request request)
 	if (specificChannelsRequested)
 	{
 		std::string dup;
-		reqChannels = split_targets(request.get_params()[0], dup);
+		reqChannels = split_comma(request.get_params()[0], dup);
 	}
 	for (Server::channelmap::const_iterator channelIt = _channels.begin(); channelIt != _channels.end(); ++channelIt)
 	{

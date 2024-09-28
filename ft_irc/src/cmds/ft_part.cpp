@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 13:23:44 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/26 13:47:29 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/28 10:24:53 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void Server::ft_part(Request request)
 		send_message(request, RES_ERR_NEEDMOREPARAMS);
 		return;
 	}
-	std::set<std::string> channelNames = split_targets(request.get_params()[0], dup);
+	std::set<std::string> channelNames = split_comma(request.get_params()[0], dup);
 	if (channelNames.empty())
 	{
 		send_message(request, RES_ERR_NEEDMOREPARAMS);

@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 09:52:32 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/26 10:14:29 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/28 10:24:53 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void Server::ft_notice(Request request)
 	if (user->is_registered() == false || request.get_params().size() < 2)
 		return;
 	std::string duplicate, message;
-	std::set<std::string> targets = split_targets(request.get_params()[0], duplicate);
+	std::set<std::string> targets = split_comma(request.get_params()[0], duplicate);
 	for (size_t i = 1; i < request.get_params().size(); ++i)
 		message += request.get_params()[i] + (i < request.get_params().size() - 1 ? " " : "");
 	for (std::set<std::string>::const_iterator it = targets.begin(); it != targets.end(); ++it)

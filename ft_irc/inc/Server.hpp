@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:14:40 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/27 14:50:10 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/28 10:24:53 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ class Server
 		void remove_client(User *user, std::string s);
 		void print_login(User *user);
 		usermap::iterator	get_user_by_nick(std::string nickname);
-		std::set<std::string>	split_targets(std::string targets, std::string &duplicate);
+		std::set<std::string>	split_comma(std::string targets, std::string &duplicate);
 
 		// --- commands
 		void ft_cap(Request request);
@@ -91,7 +91,7 @@ class Server
 		void ft_nick(Request request);
 		void ft_user(Request request);
 		void ft_pass(Request request);
-		void privmsg_command(Request request);
+		void ft_privmsg(Request request);
 		void ft_quit(Request request);
 		void join_names_command (Request request);
 		void ft_list (Request request);

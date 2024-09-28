@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:16:34 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/27 14:50:10 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/28 09:49:18 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -267,7 +267,7 @@ void Server::command_exec(Request request)
 	command_map["PASS"] = &Server::ft_pass;
 	command_map["NICK"] = &Server::ft_nick;
 	command_map["USER"] = &Server::ft_user;
-	command_map["PRIVMSG"] = &Server::privmsg_command;
+	command_map["PRIVMSG"] = &Server::ft_privmsg;
 	command_map["QUIT"] = &Server::ft_quit;
 	command_map["JOIN"] = &Server::join_names_command;
 	command_map["NAMES"] = &Server::join_names_command;
