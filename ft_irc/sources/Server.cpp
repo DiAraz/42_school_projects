@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:16:34 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/28 10:29:56 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/28 12:23:02 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ Server::Server(char **argv)
     long port = strtol(argv[1], &end_ptr, 0);
     if (*end_ptr != '\0' || port <= 0 || port > 65535) //65535 because port numbers are stored in a 16-bit unsigned integer field in network protocols like TCP and UDP
 	{
-        throw IncorrectPortNumber();
+        throw InvalidPort();
 	}
     _port = static_cast<int>(port);
 
     std::string password_input = argv[2];
 	if (password_input.empty())
 	{
-		throw InvalidPassword();
+		throw IncorrectPass();
 	}
 	_password = password_input;
 
@@ -48,7 +48,7 @@ void Server::socket_construction()
     // Create socket with IPv4 and TCP
     _listening_socket = socket(AF_INET, SOCK_STREAM, 0);
     if (_listening_socket < 0)
-        throw CreateSocketError();
+        throw SocketSetupFail();
 
     bzero(&server_addr, sizeof(server_addr));
     server_addr.sin_family = AF_INET; // Internet address family
@@ -58,19 +58,19 @@ void Server::socket_construction()
     // Allow the socket to reuse the address (SO_REUSEADDR)
     int reuse_option = 1;
     if (setsockopt(_listening_socket, SOL_SOCKET, SO_REUSEADDR, &reuse_option, sizeof(reuse_option)) < 0)
-        throw SetSocketOptionError();
+        throw SocketOptionFail();
 
     // Set the socket to non-blocking mode
     if (fcntl(_listening_socket, F_SETFL, O_NONBLOCK) == -1)
-        throw SetSocketOptionError();
+        throw SocketOptionFail();
 
     // Bind the socket to the address and port
     if (bind(_listening_socket, (struct sockaddr*)&server_addr, sizeof(server_addr)) < 0)
-        throw BindSocketError();
+        throw SocketBindFail();
 
     // Start listening for incoming connections with a maximum queue length
     if (listen(_listening_socket, SOMAXCONN) < 0)
-        throw ListenSocketError();
+        throw SocketListenFail();
 
     bzero(_user_map_poll, sizeof(_user_map_poll));
     _user_map_poll[0].fd = _listening_socket;
@@ -88,14 +88,14 @@ void Server::accept_new_client()
     if (client_socket_fd == -1)
     {
         std::cerr << "Failed to accept new client" << std::endl;
-        throw AcceptSocketError();
+        throw SocketAcceptFail();
     }
 
     char client_ip[INET_ADDRSTRLEN];
     if (!inet_ntop(AF_INET, &client_address.sin_addr, client_ip, INET_ADDRSTRLEN))
     {
         std::cerr << "Failed to convert client IP" << std::endl;
-        throw AcceptSocketError();
+        throw SocketAcceptFail();
     }
 
     User new_user(client_socket_fd, client_ip);
@@ -148,7 +148,7 @@ void Server::server_loop()
         int poll_status = poll(_user_map_poll, _fd_count, -1);//-1 means wait indefinitely
         if (poll_status == -1)
         {
-            throw PollFailedError();
+            throw PollFailed();
         }
 
         unsigned int clients_to_check = _fd_count;
@@ -190,7 +190,7 @@ void Server::server_loop()
 void Server::add_client_to_poll(int user_fd)
 {
 	if (_fd_count >= SOMAXCONN)
-		throw FdPollFullError();
+		throw PollOverflow();
 	
 	_user_map_poll[_fd_count].fd = user_fd;
 	_user_map_poll[_fd_count].events = POLLIN;
@@ -226,7 +226,7 @@ void Server::handle_client_request(int poll_index)
 		}
 		else
 		{
-			throw RecieveMessageFailed();
+			throw ReceiveMessageFail();
 		}
 		std::map<int, User>::iterator user_itr = _user_map.find(client_fd);
 		if (user_itr != _user_map.end())
@@ -269,8 +269,8 @@ void Server::command_exec(Request request)
 	command_map["USER"] = &Server::ft_user;
 	command_map["PRIVMSG"] = &Server::ft_privmsg;
 	command_map["QUIT"] = &Server::ft_quit;
-	command_map["JOIN"] = &Server::join_names_command;
-	command_map["NAMES"] = &Server::join_names_command;
+	command_map["JOIN"] = &Server::ft_join;
+	command_map["NAMES"] = &Server::ft_join;
 	command_map["GLOBOPS"] = &Server::ft_globops;
 	command_map["LIST"] = &Server::ft_list;
 	command_map["TOPIC"] = &Server::ft_topic;

@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:14:40 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/28 10:24:53 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/28 12:23:59 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,9 @@ class Server
 		void print_login(User *user);
 		usermap::iterator	get_user_by_nick(std::string nickname);
 		std::set<std::string>	split_comma(std::string targets, std::string &duplicate);
+		void get_names_list(Request &request, Channel &channel);
+		static void broadcast (std::string message, User* user, Channel& channel);
 
-		// --- commands
 		void ft_cap(Request request);
 		void ft_ping(Request request);
 		void ft_nick(Request request);
@@ -93,7 +94,7 @@ class Server
 		void ft_pass(Request request);
 		void ft_privmsg(Request request);
 		void ft_quit(Request request);
-		void join_names_command (Request request);
+		void ft_join (Request request);
 		void ft_list (Request request);
 		void ft_topic (Request request);
 		void ft_part (Request request);
@@ -107,66 +108,62 @@ class Server
 		static void send_message(Request req, t_res err);
 		void ft_kick(Request request);
 		void ft_invite(Request request);
-		
-		void send_names_list(Request &request, Channel &channel);
-		static void broadcast (std::string message, User* user, Channel& channel);
 
-		// -------------- Exceptions -------------------
-		class IncorrectPortNumber: public std::exception {
+		class InvalidPort: public std::exception {
 			const char * what() const throw() {
-				return "Error: Provided portnumber is incorrect.";
+				return "Error: Portnumber is invalid.";
 			}
 		};
 
-		class InvalidPassword: public std::exception {
+		class IncorrectPass: public std::exception {
 			const char * what() const throw() {
-				return "Error: Provided password is invalid.";
+				return "Error: Password is incorrect.";
 			}
 		};
 
-		class CreateSocketError: public std::exception {
+		class SocketSetupFail: public std::exception {
 			const char * what() const throw() {
 				return "Error: Creating socket failed.";
 			}
 		};
 
-		class SetSocketOptionError: public std::exception {
+		class SocketOptionFail: public std::exception {
 			const char * what() const throw() {
 				return "Error: Setting socket options failed.";
 			}
 		};
 
-		class BindSocketError: public std::exception {
+		class SocketBindFail: public std::exception {
 			const char * what() const throw() {
 				return "Error: Adding User failed, too many Users connected.";
 			}
 			};
 
-			class ListenSocketError: public std::exception {
+		class SocketListenFail: public std::exception {
 			const char * what() const throw() {
 				return "Error: Listening failed.";
 			}
 		};
 
-		class AcceptSocketError: public std::exception {
+		class SocketAcceptFail: public std::exception {
 			const char * what() const throw() {
 				return "Error: Accepting failed.";
 			}
 		};
 
-		class RecieveMessageFailed: public std::exception {
+		class ReceiveMessageFail: public std::exception {
 			const char * what() const throw() {
-				return "Error: Recieving the message failed.";
+				return "Error: Receiving the message failed.";
 			}
 		};
 
-		class FdPollFullError: public std::exception {
+		class PollOverflow: public std::exception {
 		const char * what() const throw() {
 			return "Error: Adding User failed, too many Users connected.";
 		}
 		};
 
-		class PollFailedError: public std::exception {
+		class PollFailed: public std::exception {
 			const char * what() const throw() {
 				return "Error: The poll() function failed.";
 			}
