@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 10:43:46 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/28 10:32:54 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/29 12:55:27 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,8 @@ void Server::ft_invite(Request request)
 		send_message(request, RES_ERR_CHANNOPRIVSNEEDED);
 		return;
 	}
-
+	
+	invitedUser->set_invite_status(true);
 	std::string inviteMessage = ":" + inviter->get_nickname() + "!" + inviter->get_nickname() + "@" + SERVER_NAME +
 	                            " INVITE " + invitedUser->get_nickname() + " :" + channelName;
 	send_message(inviteMessage, invitedUser->get_fd());

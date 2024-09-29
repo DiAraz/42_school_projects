@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 08:57:24 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/28 10:31:23 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/29 13:17:05 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,13 @@ void Server::send_message(Request req, t_res err)
             ":" + std::string(SERVER_NAME) + " " + stream.str() + " " 
             + req.get_user()->get_nickname() + " " 
             + req.get_channel_name() + " :bad channel name",
+            req.get_user()->get_fd()
+        );
+    } else if (err == RES_ERR_INVITEONLYCHAN) {
+        send_message(
+            ":" + std::string(SERVER_NAME) + " " + stream.str() + " " 
+            + req.get_user()->get_nickname() + " " 
+            + req.get_channel_name() + " :Cannot join channel (+i)",
             req.get_user()->get_fd()
         );
     } else if (err == RES_RPL_LISTSTART) {

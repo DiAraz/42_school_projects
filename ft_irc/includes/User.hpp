@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:14:28 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/20 15:14:31 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/29 12:49:46 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class User
 		bool			_registered;
 		bool			_pass_provided;
 		bool			_operator_status;
+		bool			_invite_status;
 		std::map<std::string, Channel *> _channels;
 		
 	public:
@@ -48,11 +49,13 @@ class User
 		bool is_registered() const;
 		bool is_pass_provided() const;
 		bool is_operator() const;
+		bool is_invited() const;
 	
 		void set_name(std::string name);
 		void set_nickname(std::string nickname);
 		void set_fullname(std::string fullname);
 		void set_operator(bool value);
+		void set_invite_status(bool value);
 		void set_registered(bool value);
 		void set_pass_provided(bool value);
 

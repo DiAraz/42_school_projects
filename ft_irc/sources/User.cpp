@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 16:03:45 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/28 10:30:11 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/29 12:50:05 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ User::User()
 	  _fd(-1),
 	  _registered(false),
 	  _pass_provided(false),
-	  _operator_status(false){}
+	  _operator_status(false),
+	  _invite_status(false){}
 
 User::User(int fd, char *hostmask)
 	: _name("*"),
@@ -31,7 +32,8 @@ User::User(int fd, char *hostmask)
 	  _fd(fd),
 	  _registered(false),
 	  _pass_provided(false),
-	  _operator_status(false){}
+	  _operator_status(false),
+	  _invite_status(false){}
 
 
 User::User(const User& user)
@@ -42,6 +44,7 @@ User::User(const User& user)
 	  _fd(user.get_fd()),
 	  _registered(user.is_registered()),
 	  _pass_provided(user.is_pass_provided()),
+	  _invite_status(user.is_invited()),
 	  _channels(user._channels){}
 
 
@@ -93,6 +96,10 @@ bool User::is_operator() const{
 	return _operator_status;
 }
 
+bool User::is_invited() const{
+	return _invite_status;
+}
+
 void User::set_name(std::string name){ 
 	_name = name; 
 }
@@ -108,6 +115,11 @@ void User::set_registered(bool value){
 void User::set_operator(bool value){ 
 	_operator_status = value; 
 }
+
+void User::set_invite_status(bool value) {
+	_invite_status = value;
+}
+
 void User::set_pass_provided(bool value){ 
 	_pass_provided = value; 
 }
