@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:14:40 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/28 12:23:59 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/30 10:53:42 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@
 # include "User.hpp"
 # include "Request.hpp"
 # include "Channel.hpp"
+# include "Bonus_Bot.hpp"
 
 # define MAXLINE 4096
 # define SERVER_NAME ":ircproject42.com"
@@ -104,6 +105,8 @@ class Server
 		void ft_kill(Request request);
 		void ft_notice(Request request);
 		void ft_globops(Request request);
+		void ft_time(Request request);
+		void ft_joke(Request request);
 		static void send_message(std::string, int fd);
 		static void send_message(Request req, t_res err);
 		void ft_kick(Request request);
