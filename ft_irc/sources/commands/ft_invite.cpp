@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 10:43:46 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/29 12:55:27 by daraz            ###   ########.fr       */
+/*   Updated: 2024/09/30 11:23:32 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,6 @@ void Server::ft_invite(Request request)
 	                            " INVITE " + invitedUser->get_nickname() + " :" + channelName;
 	send_message(inviteMessage, invitedUser->get_fd());
 
-	std::string confirmMessage = SERVER_NAME ": 341 " + inviter->get_nickname() + " " + invitedUser->get_nickname() + " " + channelName;
+	std::string confirmMessage = SERVER_NAME ": 341 " + inviter->get_nickname() + " INVITE " + invitedUser->get_nickname() + " " + channelName;
 	send_message(confirmMessage, inviter->get_fd());
 }
