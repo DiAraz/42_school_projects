@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:14:54 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/27 09:57:06 by daraz            ###   ########.fr       */
+/*   Updated: 2024/10/02 12:01:54 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,8 @@ typedef enum e_res
 	RES_ERR_INVITEONLYCHAN = 473,
 	RES_INVITED = 341,
 	RES_ERR_NOTANOPERATOR = 1004,
-	RES_ERR_ALREADYANOPERATOR = 1005
+	RES_ERR_ALREADYANOPERATOR = 1005,
+	RES_ERR_USERISRECEIVER = 1100,
+	RES_ERR_NOFILEPROVIDED = 1101,
+	RES_ERR_FILENOTCREATED = 1102	
 }	t_res;

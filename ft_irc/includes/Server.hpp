@@ -6,12 +6,13 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:14:40 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/30 10:53:42 by daraz            ###   ########.fr       */
+/*   Updated: 2024/10/02 16:59:54 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+# include <fstream>
 # include <fcntl.h>
 # include <map>
 # include <algorithm>
@@ -54,6 +55,7 @@ class Server
 {
 	typedef std::map<int, User>				usermap;
 	typedef std::map<std::string, Channel>	channelmap;
+	typedef std::map<std::string, std::string> filestorage;
 
 	private:
 		int					_port;
@@ -64,6 +66,7 @@ class Server
 		nfds_t				_fd_count;
 		usermap				_user_map;
 		channelmap			_channels;
+		filestorage			_file_storage;
 
 	public:
 	
@@ -107,6 +110,8 @@ class Server
 		void ft_globops(Request request);
 		void ft_time(Request request);
 		void ft_joke(Request request);
+		void ft_send(Request request);
+		void ft_receive(Request request);
 		static void send_message(std::string, int fd);
 		static void send_message(Request req, t_res err);
 		void ft_kick(Request request);

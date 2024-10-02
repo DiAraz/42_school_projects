@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 08:57:24 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/29 13:17:05 by daraz            ###   ########.fr       */
+/*   Updated: 2024/10/02 16:44:34 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -202,6 +202,27 @@ void Server::send_message(Request req, t_res err)
             ":" + req.get_user()->get_nickname() + "!" 
             + req.get_user()->get_name() + "@" + SERVER_NAME + " JOIN :" 
             + req.get_channel_name(),
+            req.get_user()->get_fd()
+        );
+    } else if (err == RES_ERR_USERISRECEIVER) {
+        send_message(
+            ":" + std::string(SERVER_NAME) + " " + stream.str() + " " 
+            + req.get_user()->get_nickname() + " " 
+            + ":You cannot send files to yourself",
+            req.get_user()->get_fd()
+        );
+    } else if (err == RES_ERR_NOFILEPROVIDED) {
+        send_message(
+            ":" + std::string(SERVER_NAME) + " " + stream.str() + " " 
+            + req.get_user()->get_nickname() + " " 
+            + ":Could not open file",
+            req.get_user()->get_fd()
+        );
+    } else if (err == RES_ERR_FILENOTCREATED) {
+        send_message(
+            ":" + std::string(SERVER_NAME) + " " + stream.str() + " " 
+            + req.get_user()->get_nickname() + " " 
+            + ":Failed to create file on server",
             req.get_user()->get_fd()
         );
     }

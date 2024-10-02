@@ -8,7 +8,7 @@ CDEPS = $(patsubst %, includes/%.hpp, Channel response Request Server User);
 SRC = main.cpp	$(addprefix sources/, Server.cpp User.cpp Request.cpp Channel.cpp cmd_error_replies.cpp Bonus_Bot.cpp) \
 				$(addprefix sources/commands/, ft_cap.cpp ft_nick.cpp ft_ping.cpp ft_pass.cpp \
 				ft_user.cpp ft_quit.cpp ft_privmsg.cpp ft_notice.cpp \
-				ft_oper.cpp ft_kill.cpp ft_globops.cpp \
+				ft_oper.cpp ft_kill.cpp ft_globops.cpp ft_send.cpp ft_receive.cpp \
 				ft_join.cpp ft_list.cpp ft_part.cpp ft_topic.cpp ft_who.cpp ft_mode.cpp ft_kick.cpp ft_invite.cpp ft_time.cpp ft_joke.cpp)
 
 OBJ = $(SRC:.cpp=.o)

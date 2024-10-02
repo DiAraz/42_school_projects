@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:16:34 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/30 10:53:02 by daraz            ###   ########.fr       */
+/*   Updated: 2024/10/02 16:49:38 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -284,6 +284,8 @@ void Server::command_exec(Request request)
 	command_map["INVITE"] = &Server::ft_invite;
 	command_map["TIME"] = &Server::ft_time;
 	command_map["JOKE"] = &Server::ft_joke;
+	command_map["SEND"] = &Server::ft_send;
+	command_map["RECEIVE"] = &Server::ft_receive;
 
 	std::map<std::string, void (Server::*)(Request)>::iterator it = command_map.find(cmd);
 	if (it != command_map.end()) {
