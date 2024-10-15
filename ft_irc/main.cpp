@@ -6,12 +6,14 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 14:19:27 by daraz             #+#    #+#             */
-/*   Updated: 2024/09/29 13:25:36 by daraz            ###   ########.fr       */
+/*   Updated: 2024/10/15 13:05:23 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "includes/User.hpp"
 # include "includes/Server.hpp"
+
+/* https://datatracker.ietf.org/doc/html/rfc1459#section-6.2 */
 
 int	main(int argc, char **argv)
 {
@@ -30,5 +32,3 @@ int	main(int argc, char **argv)
 	}
 	return(0);
 }
-
-/* https://datatracker.ietf.org/doc/html/rfc1459#section-6.2 */

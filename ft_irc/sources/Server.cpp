@@ -6,7 +6,7 @@
 /*   By: daraz <daraz@student.42prague.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:16:34 by daraz             #+#    #+#             */
-/*   Updated: 2024/10/02 16:49:38 by daraz            ###   ########.fr       */
+/*   Updated: 2024/10/15 14:09:17 by daraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -313,7 +313,8 @@ std::map<int, User>::iterator Server::get_user_by_nick(std::string nickname)
 void Server::send_message(std::string message, int fd)
 {
 	std::cout << "SERVER RESPONSE < " << message << " >" << std::endl;
-	send(fd, message.append(RESPONSE_END).c_str(), message.size(), 0);
+	message.append(RESPONSE_END);
+	send(fd, message.c_str(), message.size(), 0);
 }
 
 Channel* Server::find_channel(std::string channel_name)
