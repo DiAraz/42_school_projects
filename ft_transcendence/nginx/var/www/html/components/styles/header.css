@@ -1,0 +1,28 @@
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px; /* Set explicit height */
+    background-color: #303030;
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* Center the nav-buttons container */
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.user-section {
+    position: absolute; /* Position the user-section absolutely */
+    right: 50px; /* Increased from 20px to move buttons left */
+    display: flex;
+    gap: 10px;
+}
+
+.hidden {
+    display: none;
+}
