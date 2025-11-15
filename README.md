@@ -16,5 +16,4 @@
 | 5 | [inception](https://github.com/DiAraz/42_school_projects/tree/main/inception) | ![Static Badge](https://img.shields.io/badge/shell-0D1117?style=for-the-badge&logo=gnu-bash&logoColor=white) | Set up a Docker network with containers for nginx, mariadb, and wordpress. |
 | 5 | [CPP modules](https://github.com/DiAraz/42_school_projects/tree/main/cpp) | ![Static Badge](https://img.shields.io/badge/C%2B%2B-black?style=for-the-badge&logo=C%2B%2B&logoColor=blue) | C++ modules to learn OOP basics: classes, inheritance, polymorphism, templates, containers. |
 | 5 | [ft_irc](https://github.com/DiAraz/42_school_projects/tree/main/ft_irc) | ![Static Badge](https://img.shields.io/badge/C%2B%2B-black?style=for-the-badge&logo=C%2B%2B&logoColor=blue) | Create an IRC chat server in C++. |
-
-
+| 6 | [ft_transcendence](https://github.com/DiAraz/42_school_projects/tree/main/ft_transcendence) | ![Static Badge](https://img.shields.io/badge/JS-black?style=for-the-badge&logo=javascript&logoColor=yellow) | Create a web application - pong game. |
