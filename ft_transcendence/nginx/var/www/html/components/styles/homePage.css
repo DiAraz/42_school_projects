@@ -1,0 +1,31 @@
+/* homePage.css */
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  gap: 20px;
+}
+
+.logged-in-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.logged-in-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logged-in-button:hover {
+  background-color: #45a049;
+}
